@@ -23,3 +23,14 @@
 - has_many :messages
 - has_many :users_groups
 - has_many :groups, through: :users_groups
+
+## groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
