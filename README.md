@@ -4,7 +4,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|chatname|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :messages
