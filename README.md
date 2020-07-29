@@ -4,7 +4,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :messages
@@ -15,9 +15,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|email|string|null: false|
-|password|string|null: false|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
 
 ### Association
 - has_many :messages
