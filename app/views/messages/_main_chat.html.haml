@@ -1,0 +1,48 @@
+.Chat-main
+  .Chat-main__right-header
+    .Right-header-groups
+      .Right-header-groups__group-name
+        techcamp1
+      %ul.Right-header-groups__group-member
+        Member : 
+        %li.Right-header-groups__group-member-list
+          name1
+        %li.Right-header-groups__group-member-list
+          name2
+        %li.Right-header-groups__group-member-list
+          name3
+    = link_to "#", class: "Right-header-groups__edit-btn" do
+      Edit
+  .Chat-main__message-list
+    .Message-box
+      .Message-box__user
+        .Message-box__user-name
+          name1
+        .Message-box__date-time
+          2020/8/1(Sat) 9:00:00
+      .Message-box__message
+        おはよう！
+    .Message-box
+      .Message-box__user
+        .Message-box__user-name
+          name2
+        .Message-box__date-time
+          2020/8/1(Sat) 12:00:00
+      .Message-box__message
+        こんにちは！
+    .Message-box
+      .Message-box__user
+        .Message-box__user-name
+          name3
+        .Message-box__date-time
+          2020/8/1(Sat) 20:00:00
+      .Message-box__message
+        こんばんは！
+  .Chat-main__message-form
+    %form.Form-box
+      .Form-box__contents
+        %input{class: "Form-box__inputContent", "placeholder": "type a message", "type": "text"}
+        %label{class: "Form-box__inputImage",for: "message_image"}
+          = icon('far', 'image')
+          %input{class: "Hidden", "type": "file", "name": "message[image]", "id": "message_image"}
+      %input{class: "Form-box__btn", "type": "submit", "value": "Send"}
