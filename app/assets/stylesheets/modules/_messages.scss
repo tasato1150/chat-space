@@ -81,6 +81,7 @@ a {
   }
   &__message-list {
     @include box(calc(100vh - 190px), 35px 0 0 40px, #fafafa);
+    overflow: scroll;
   }
   &__message-form {
     @include box(90px, 20px 40px, #d2d2d2);
@@ -99,7 +100,7 @@ a {
     display: flex;
   }
   &__group-member-list {
-    margin-left: 5px;
+    padding-right: 5px;
   }
   &__edit-btn {
     color: #38aef0;
@@ -163,11 +164,15 @@ a {
   }
 }
 
-.Form-box .fa-image {
+.Form-box__contents .fa-image {
   line-height: 50px;
   font-size: 25px;
 }
 
 .Hidden {
   display: none;
+}
+
+.Message__image {
+  height: 300px;
 }

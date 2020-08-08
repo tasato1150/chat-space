@@ -1,7 +1,7 @@
 .Side-bar
   .Side-bar__left-header
     .Left-header-box
-      .Left-header-box__name
+      %h3.Left-header-box__name
         = current_user.name 
       %ul.Left-header-box__icons
         %li.Left-header-box__btn
@@ -13,8 +13,8 @@
   .Side-bar__group-list
     .Group-list
       - current_user.groups.each do |group|
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .Group-list__name
             = group.name
           .Group-list__message
-            まだメッセージはありません。
+            = group.show_last_message

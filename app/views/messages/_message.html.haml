@@ -1,0 +1,11 @@
+.Message-box
+  .Message-box__user
+    .Message-box__user-name
+      = message.user.name
+    .Message-box__date-time
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .Message-box__message
+    - if message.body.present?
+      %p.Message__body
+        = message.body
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?
