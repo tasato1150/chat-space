@@ -1,8 +1,8 @@
 $(function(){
   function buildHTML(message){
-    if (message.image) {
-      let html = 
-        `<div class="Message-box">
+    if ( message.image ) {
+      let html =
+        `<div class="Message-box" data-message-id=${message.id}>
           <div class="Message-box__user">
             <div class="Message-box__user-name">
               ${message.user_name}
@@ -20,8 +20,8 @@ $(function(){
         </div>`
       return html;
     } else {
-      let html = 
-      `<div class="Message-box">
+      let html =
+      `<div class="Message-box" data-message-id=${message.id}>
         <div class="Message-box__user">
           <div class="Message-box__user-name">
             ${message.user_name}
@@ -54,13 +54,14 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.Chat-main__message-list').append(html);
+      $('.Chat-main__message-list').append(html);      
       $('form')[0].reset();
       $('.Chat-main__message-list').animate({ scrollTop: $('.Chat-main__message-list')[0].scrollHeight});
-      $('.Form-box__btn').prop('disabled', false);
+      $('.Form-box__btn').prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.Form-box__btn').prop("disabled", false);
     });
   });
 });
